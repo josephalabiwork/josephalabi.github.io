@@ -13,9 +13,32 @@
     a:hover { text-decoration: underline; }
 
     /* Header */
-    header { text-align: center; padding: 100px 20px 50px; background: linear-gradient(135deg, #007acc 0%, #00c6ff 100%); color: white; }
-    header h1 { font-size: 3rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; font-weight: 500; }
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      background: linear-gradient(135deg, #007acc 0%, #00c6ff 100%);
+      color: white;
+      perspective: 1000px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      transform: translateZ(20px);
+    }
+
+    /* 3D text effect for job title line */
+    header p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #004f75,
+                   2px 2px 4px #003b5a,
+                   3px 3px 6px rgba(0,0,0,0.3);
+      transform: translateZ(25px);
+    }
 
     /* Sections */
     section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
@@ -23,127 +46,29 @@
 
     /* Projects */
     .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .project { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
-    .project:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .project {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
     .project h3 { font-size: 1.5rem; margin-bottom: 15px; color: #333; }
     .project p { font-size: 1rem; margin-bottom: 20px; color: #555; }
-    .project a { display: inline-block; padding: 10px 20px; background-color: #007acc; color: white; border-radius: 6px; transition: background-color 0.3s; }
-    .project a:hover { background-color: #005f99; }
 
-    /* Skills */
-    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 20px; }
-    .skill { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
-    .skill:hover { transform: translateY(-5px); }
-    .skill h4 { margin-bottom: 15px; color: #007acc; }
-    .skill-bar { background: #e0e0e0; border-radius: 8px; overflow: hidden; height: 12px; }
-    .skill-bar span { display: block; height: 100%; background: #007acc; width: 0; transition: width 1s ease-in-out; }
-
-    /* Experience / Timeline */
-    .timeline { position: relative; margin: 50px 0; }
-    .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background: #007acc; }
-    .timeline-item { position: relative; width: 50%; padding: 20px 40px; box-sizing: border-box; }
-    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
-    .timeline-item:nth-child(even) { left: 50%; }
-    .timeline-item::before { content: ''; position: absolute; top: 20px; width: 20px; height: 20px; background: #007acc; border-radius: 50%; border: 4px solid white; z-index: 1; }
-    .timeline-item:nth-child(odd)::before { right: -12px; }
-    .timeline-item:nth-child(even)::before { left: -12px; }
-
-    .timeline-item h4 { margin-bottom: 10px; color: #007acc; }
-    .timeline-item p { color: #555; }
-
-    /* Footer */
-    footer { text-align: center; padding: 40px 20px; background-color: #f1f1f5; font-size: 1rem; color: #555; }
-
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <h1>Joseph Alabi</h1>
-    <p>💼 Data Analyst | SQL | Python | Power BI | Excel</p>
-  </header>
-
-  <!-- Projects -->
-  <section class="projects">
-    <h2>My Projects</h2>
-    <div class="projects-container">
-      <div class="project">
-        <h3>🛍 NovaRetail Sales Performance Analysis</h3>
-        <p>Data cleaning and visualization using <strong>Python</strong> and <strong>Matplotlib</strong> to uncover sales insights and trends.</p>
-        <a href="https://github.com/josephalabiwork/Sales-Performance-Analysis-on-NovaRetail-Ltd" target="_blank" rel="noopener noreferrer">🔗 View Project</a>
-      </div>
-      <div class="project">
-        <h3>🏠 Real Estate Company Performance Analysis</h3>
-        <p>Analyzed property sales performance using <strong>SQL Workbench</strong> and <strong>Power BI</strong> for interactive dashboards.</p>
-        <a href="https://github.com/josephalabiwork/real-estate-company-performance-analysis" target="_blank">🔗 View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="skills">
-    <h2>My Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <h4>Python</h4>
-        <div class="skill-bar"><span style="width: 85%;"></span></div>
-      </div>
-      <div class="skill">
-        <h4>SQL</h4>
-        <div class="skill-bar"><span style="width: 85%;"></span></div>
-      </div>
-      <div class="skill">
-        <h4>Power BI</h4>
-        <div class="skill-bar"><span style="width: 85%;"></span></div>
-      </div>
-      <div class="skill">
-        <h4>Excel</h4>
-        <div class="skill-bar"><span style="width: 85%;"></span></div>
-      </div>
-    </div>
-  </section>
-
- <!-- Experience / Timeline -->
-<section class="experience">
-  <h2>Experience & Education</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h4>Data Analyst Intern - Tech Studio Academy</h4>
-      <p>October 2025 - November 2025: Cleaned datasets, built dashboards, and delivered actionable insights.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>CEO - TB Plug Logistics</h4>
-      <p>2020 - 2023: Led company operations, managed logistics strategies, and optimized supply chain performance.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>B.Sc. Business Administration - University of Benin</h4>
-      <p>2019 - 2023: Focused on data analysis, business analysis, probability, and statistical modeling.</p>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Footer -->
-  <footer>
-    📧 Contact: <strong>josephalabiwork@gmail.com</strong>
-  </footer>
-
-  <!-- Optional: Animate skill bars when visible -->
-  <script>
-    const bars = document.querySelectorAll('.skill-bar span');
-    window.addEventListener('scroll', () => {
-      bars.forEach(bar => {
-        const top = bar.getBoundingClientRect().top;
-        const height = window.innerHeight;
-        if (top < height) {
-          bar.style.width = bar.style.width;
-        }
-      });
-    });
-  </script>
-
-</body>
-</html>
-
-
+    /* 3D View Project Button */
+    .project a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(145deg, #0078ff, #0056b3);
+      color: white;
+      border-radius: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      box-shadow: 0 6px 0 #003f7f;
+      transition: all 0.2s ease;
+      transform: perspective(600px) t
